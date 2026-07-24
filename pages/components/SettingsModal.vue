@@ -1,88 +1,199 @@
 <template>
   <div
     class="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 backdrop-blur-sm"
-    @click.self="$emit('close')">
-
-    <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden">
+    @click.self="$emit('close')"
+  >
+    <div
+      class="bg-base-100 text-base-content rounded-2xl shadow-2xl max-w-lg w-full mx-4 overflow-hidden"
+    >
       <!-- 头部 -->
-      <div class="p-5 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+      <div
+        class="p-5 border-b border-base-300 flex items-center justify-between"
+      >
         <h2 class="text-lg font-bold flex items-center gap-2">
-          <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <svg
+            class="w-5 h-5 text-primary"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
           </svg>
+
           设置
         </h2>
-        <button @click="$emit('close')" class="btn btn-ghost btn-sm btn-circle cursor-pointer text-slate-400 hover:text-slate-600">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+        <button
+          type="button"
+          class="btn btn-ghost btn-sm btn-circle cursor-pointer"
+          title="关闭"
+          @click="$emit('close')"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
       </div>
 
       <!-- 内容区域 -->
-      <div class="p-5 space-y-6 max-h-[60vh] overflow-y-auto custom-scrollbar">
-
+      <div
+        class="p-5 space-y-6 max-h-[60vh] overflow-y-auto custom-scrollbar"
+      >
         <!-- 布局设置 -->
         <div class="space-y-3">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider">布局</h3>
+          <h3
+            class="text-sm font-semibold text-base-content/60 uppercase tracking-wider"
+          >
+            布局
+          </h3>
+
           <div class="grid grid-cols-2 gap-3">
             <button
-              @click="selectLayout('grid')"
+              type="button"
               class="btn gap-2 cursor-pointer"
-              :class="settings.layout === 'grid' ? 'btn-primary' : 'btn-outline'">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+              :class="settings.layout === 'grid' ? 'btn-primary' : 'btn-outline'"
+              @click="selectLayout('grid')"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+                />
               </svg>
+
               网格布局
             </button>
+
             <button
-              @click="selectLayout('list')"
+              type="button"
               class="btn gap-2 cursor-pointer"
-              :class="settings.layout === 'list' ? 'btn-primary' : 'btn-outline'">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              :class="settings.layout === 'list' ? 'btn-primary' : 'btn-outline'"
+              @click="selectLayout('list')"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               </svg>
+
               列表布局
             </button>
           </div>
         </div>
 
         <!-- 主题设置 -->
-<div class="space-y-3">
-  <h3 class="text-sm font-semibold text-base-content/60 uppercase tracking-wider">
-    主题
-  </h3>
+        <div class="space-y-3">
+          <h3
+            class="text-sm font-semibold text-base-content/60 uppercase tracking-wider"
+          >
+            主题
+          </h3>
 
-  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-    <button
-      v-for="item in themes"
-      :key="item.value"
-      type="button"
-      @click="selectTheme(item.value)"
-      class="btn gap-2 cursor-pointer"
-      :class="settings.theme === item.value ? 'btn-primary' : 'btn-outline'"
-    >
-      <span>{{ item.icon }}</span>
-      <span>{{ item.name }}</span>
-    </button>
-  </div>
-</div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <button
+              v-for="item in themes"
+              :key="item.value"
+              type="button"
+              class="btn gap-2 cursor-pointer"
+              :class="
+                settings.theme === item.value
+                  ? 'btn-primary'
+                  : 'btn-outline'
+              "
+              @click="selectTheme(item.value)"
+            >
+              <span>{{ item.icon }}</span>
+              <span>{{ item.name }}</span>
+            </button>
+          </div>
+        </div>
 
         <!-- 数据管理 -->
         <div class="space-y-3">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider">数据管理</h3>
+          <h3
+            class="text-sm font-semibold text-base-content/60 uppercase tracking-wider"
+          >
+            数据管理
+          </h3>
+
           <div class="space-y-2">
-            <button @click="clearCache" class="btn btn-outline btn-sm w-full gap-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            <button
+              type="button"
+              class="btn btn-outline btn-sm w-full gap-2"
+              @click="clearCache"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
               </svg>
+
               清除缓存
             </button>
-            <button @click="resetSettings" class="btn btn-outline btn-sm w-full gap-2 text-red-500 hover:text-red-600">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+
+            <button
+              type="button"
+              class="btn btn-outline btn-sm w-full gap-2 text-red-500 hover:text-red-600"
+              @click="resetSettings"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
+
               重置所有设置
             </button>
           </div>
@@ -90,51 +201,88 @@
 
         <!-- 快捷键说明 -->
         <div class="space-y-3">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider">键盘快捷键</h3>
-          <div class="text-xs space-y-2 bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg">
+          <h3
+            class="text-sm font-semibold text-base-content/60 uppercase tracking-wider"
+          >
+            键盘快捷键
+          </h3>
+
+          <div class="text-xs space-y-2 bg-base-200 p-3 rounded-lg">
             <div class="flex justify-between">
               <span>打开搜索</span>
-              <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-700 rounded">⌘/Ctrl + K</kbd>
+              <kbd class="px-1.5 py-0.5 bg-base-300 rounded">
+                ⌘/Ctrl + K
+              </kbd>
             </div>
+
             <div class="flex justify-between">
               <span>刷新全部</span>
-              <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-700 rounded">⌘/Ctrl + R</kbd>
+              <kbd class="px-1.5 py-0.5 bg-base-300 rounded">
+                ⌘/Ctrl + R
+              </kbd>
             </div>
+
             <div class="flex justify-between">
               <span>切换布局</span>
-              <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-700 rounded">⌘/Ctrl + L</kbd>
+              <kbd class="px-1.5 py-0.5 bg-base-300 rounded">
+                ⌘/Ctrl + L
+              </kbd>
             </div>
+
             <div class="flex justify-between">
               <span>关闭弹窗</span>
-              <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-700 rounded">Esc</kbd>
+              <kbd class="px-1.5 py-0.5 bg-base-300 rounded">
+                Esc
+              </kbd>
             </div>
           </div>
         </div>
 
         <!-- 关于 -->
-        <div class="space-y-3 pt-3 border-t border-slate-200 dark:border-slate-700">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider">关于</h3>
-          <div class="text-xs text-slate-500 space-y-1">
+        <div class="space-y-3 pt-3 border-t border-base-300">
+          <h3
+            class="text-sm font-semibold text-base-content/60 uppercase tracking-wider"
+          >
+            关于
+          </h3>
+
+          <div class="text-xs text-base-content/60 space-y-1">
             <p>NewsHub v{{ version }}</p>
             <p>一个现代化的热点聚合平台</p>
-       <p class="mt-2">
-  <a
-    href="https://blog.8818618.xyz"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-blue-500 hover:underline"
-  >
-    访问我的博客 →
-  </a>
-</p>
+
+            <p class="mt-2">
+              <a
+                href="https://blog.8818618.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                访问我的博客 →
+              </a>
+            </p>
           </div>
         </div>
       </div>
 
       <!-- 底部操作 -->
-      <div class="p-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 flex justify-end gap-2">
-        <button @click="$emit('close')" class="btn btn-ghost">关闭</button>
-        <button @click="saveSettings" class="btn btn-primary">保存设置</button>
+      <div
+        class="p-4 bg-base-200 border-t border-base-300 flex justify-end gap-2"
+      >
+        <button
+          type="button"
+          class="btn btn-ghost"
+          @click="$emit('close')"
+        >
+          关闭
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          @click="saveSettings"
+        >
+          保存设置
+        </button>
       </div>
     </div>
   </div>
@@ -145,6 +293,55 @@ const emit = defineEmits(['close', 'save'])
 
 const version = ref('1.0.0')
 
+// 可选择的主题
+const themes = [
+  {
+    name: '浅色',
+    value: 'light',
+    icon: '☀️'
+  },
+  {
+    name: '深色',
+    value: 'dark',
+    icon: '🌙'
+  },
+  {
+    name: '自动',
+    value: 'auto',
+    icon: '🔄'
+  },
+  {
+    name: '电报蓝',
+    value: 'telegram',
+    icon: '✈️'
+  },
+  {
+    name: '少女粉',
+    value: 'pink',
+    icon: '🌸'
+  },
+  {
+    name: '奶油粉',
+    value: 'cupcake',
+    icon: '🍰'
+  },
+  {
+    name: '马卡龙',
+    value: 'pastel',
+    icon: '🍬'
+  },
+  {
+    name: '薄荷绿',
+    value: 'emerald',
+    icon: '🌿'
+  },
+  {
+    name: '黑金',
+    value: 'luxury',
+    icon: '👑'
+  }
+]
+
 // 设置数据
 const settings = ref({
   layout: 'grid',
@@ -152,26 +349,54 @@ const settings = ref({
   pinnedSources: []
 })
 
+// 应用主题
+const applyTheme = (theme) => {
+  let actualTheme = theme
+
+  if (theme === 'auto') {
+    actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+  }
+
+  document.documentElement.setAttribute('data-theme', actualTheme)
+  localStorage.setItem('theme', actualTheme)
+}
+
 // 加载保存的设置
 const loadSettings = () => {
   const saved = localStorage.getItem('newsHubSettings')
+
   if (saved) {
     try {
       const parsed = JSON.parse(saved)
-      settings.value = { ...settings.value, ...parsed }
-    } catch (e) {
-      console.error('加载设置失败:', e)
+      settings.value = {
+        ...settings.value,
+        ...parsed
+      }
+    } catch (error) {
+      console.error('加载设置失败:', error)
+    }
+  } else {
+    const savedTheme = localStorage.getItem('theme')
+
+    if (savedTheme) {
+      settings.value.theme = savedTheme
     }
   }
 
+  // 打开设置时应用保存的主题
+  applyTheme(settings.value.theme)
+
   // 加载置顶源
   const pinned = localStorage.getItem('hot-list-preference')
+
   if (pinned) {
     try {
       const parsed = JSON.parse(pinned)
       settings.value.pinnedSources = parsed.pinned || []
-    } catch (e) {
-      console.error('加载置顶数据失败:', e)
+    } catch (error) {
+      console.error('加载置顶数据失败:', error)
     }
   }
 }
@@ -187,33 +412,19 @@ const selectTheme = (theme) => {
   applyTheme(theme)
 }
 
-// 应用主题
-const applyTheme = (theme) => {
-  let actualTheme = theme
-
-  if (theme === 'auto') {
-    actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  }
-
-  document.documentElement.setAttribute('data-theme', actualTheme)
-  localStorage.setItem('theme', actualTheme)
-}
-
 // 清除缓存
 const clearCache = () => {
   if (confirm('确定要清除所有缓存数据吗？')) {
-    // 清除 localStorage
     const keysToKeep = ['newsHubSettings', 'theme']
-    Object.keys(localStorage).forEach(key => {
+
+    Object.keys(localStorage).forEach((key) => {
       if (!keysToKeep.includes(key)) {
         localStorage.removeItem(key)
       }
     })
 
-    // 清除 sessionStorage
     sessionStorage.clear()
 
-    // 刷新页面
     alert('缓存已清除，即将刷新页面')
     window.location.reload()
   }
@@ -225,6 +436,7 @@ const resetSettings = () => {
     localStorage.removeItem('newsHubSettings')
     localStorage.removeItem('hot-list-preference')
     localStorage.removeItem('searchHistory')
+    localStorage.setItem('theme', 'light')
 
     settings.value = {
       layout: 'grid',
@@ -239,17 +451,21 @@ const resetSettings = () => {
 
 // 保存设置
 const saveSettings = () => {
-  // 保存到 localStorage
-  localStorage.setItem('newsHubSettings', JSON.stringify({
-    layout: settings.value.layout,
-    theme: settings.value.theme
-  }))
+  localStorage.setItem(
+    'newsHubSettings',
+    JSON.stringify({
+      layout: settings.value.layout,
+      theme: settings.value.theme
+    })
+  )
 
-  // 保存置顶源
   if (settings.value.pinnedSources.length > 0) {
-    localStorage.setItem('hot-list-preference', JSON.stringify({
-      pinned: settings.value.pinnedSources
-    }))
+    localStorage.setItem(
+      'hot-list-preference',
+      JSON.stringify({
+        pinned: settings.value.pinnedSources
+      })
+    )
   }
 
   emit('save', settings.value)
@@ -274,5 +490,9 @@ onMounted(() => {
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.3);
   border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
 }
 </style>
