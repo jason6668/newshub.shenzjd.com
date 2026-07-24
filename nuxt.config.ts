@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
 import { resolve } from "node:path";
+import daisyui from "daisyui";
 
 export default defineNuxtConfig({
   // 兼容性日期
@@ -101,17 +102,27 @@ export default defineNuxtConfig({
 
   // Tailwind CSS 配置
   tailwindcss: {
-    config: {
-      theme: {
-        extend: {
-          colors: {
-            primary: "#07C160",
-            secondary: "#1DA1F2",
-          },
-        },
-      },
+  config: {
+    theme: {
+      extend: {},
+    },
+
+    plugins: [daisyui],
+
+    daisyui: {
+      themes: [
+        "light",
+        "dark",
+        "aqua",
+        "valentine",
+        "cupcake",
+        "pastel",
+        "emerald",
+        "luxury",
+      ],
     },
   },
+},
 
   // 开发服务器配置
   devServer: {
