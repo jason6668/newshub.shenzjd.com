@@ -13,9 +13,9 @@
             </div>
             <div class="hidden sm:block">
               <h1 class="text-lg font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                NewsHub
+                马老师专用
               </h1>
-              <p class="text-xs text-slate-500 dark:text-slate-400">热点聚合器</p>
+              <p class="text-xs text-slate-500 dark:text-slate-400">热点聚合新闻</p>
             </div>
           </div>
 
@@ -80,7 +80,7 @@
 
             <!-- GitHub -->
             <a
-              href="https://github.com/wu529778790/newshub.shenzjd.com"
+              href="https://github.com/jason6668/newshub.shenzjd.com"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-ghost btn-sm sm:btn-md btn-circle cursor-pointer"
