@@ -2,10 +2,10 @@
   <div class="min-h-screen relative overflow-hidden">
     <!-- 动态背景 -->
     <div class="fixed inset-0 -z-10">
-      <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-500"></div>
+      <div class="absolute inset-0 bg-base-200 transition-colors duration-500"></div>
       <div class="absolute top-0 left-0 w-full h-full opacity-30 dark:opacity-10">
-        <div class="absolute top-10 left-10 w-72 h-72 bg-blue-400 dark:bg-slate-700 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-20 right-20 w-96 h-96 bg-purple-400 dark:bg-slate-700 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s"></div>
+        <div class="absolute top-10 left-10 w-72 h-72 bg-primary/30 rounded-full blur-3xl animate-pulse"></div>
+        <div   class="absolute bottom-20 right-20 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-pulse"   style="animation-delay: 1s" ></div>
       </div>
     </div>
 
