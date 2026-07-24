@@ -10,12 +10,14 @@
     </div>
 
     <!-- 新版头部 -->
-    <NewHeader
-      :source-count="sources.length"
-      :loading="globalLoading"
-      @refresh="refreshAll"
-      @search="handleSearch"
-      @toggle-layout="toggleLayout" />
+   <NewHeader
+  :source-count="sources.length"
+  :loading="globalLoading"
+  @refresh="refreshAll"
+  @search="handleSearch"
+  @toggle-layout="toggleLayout"
+  @settings="showSettings = true"
+/>
 
     <!-- 初始加载状态 -->
     <LoadingState v-if="initialLoading" message="正在初始化数据源..." />
