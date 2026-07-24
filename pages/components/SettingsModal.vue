@@ -49,29 +49,25 @@
         </div>
 
         <!-- 主题设置 -->
-        <div class="space-y-3">
-          <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-wider">主题</h3>
-          <div class="grid grid-cols-3 gap-3">
-            <button
-              @click="selectTheme('light')"
-              class="btn gap-2 cursor-pointer"
-              :class="settings.theme === 'light' ? 'btn-primary' : 'btn-outline'">
-              ☀️ 浅色
-            </button>
-            <button
-              @click="selectTheme('dark')"
-              class="btn gap-2 cursor-pointer"
-              :class="settings.theme === 'dark' ? 'btn-primary' : 'btn-outline'">
-              🌙 深色
-            </button>
-            <button
-              @click="selectTheme('auto')"
-              class="btn gap-2 cursor-pointer"
-              :class="settings.theme === 'auto' ? 'btn-primary' : 'btn-outline'">
-              🔄 自动
-            </button>
-          </div>
-        </div>
+<div class="space-y-3">
+  <h3 class="text-sm font-semibold text-base-content/60 uppercase tracking-wider">
+    主题
+  </h3>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+    <button
+      v-for="item in themes"
+      :key="item.value"
+      type="button"
+      @click="selectTheme(item.value)"
+      class="btn gap-2 cursor-pointer"
+      :class="settings.theme === item.value ? 'btn-primary' : 'btn-outline'"
+    >
+      <span>{{ item.icon }}</span>
+      <span>{{ item.name }}</span>
+    </button>
+  </div>
+</div>
 
         <!-- 数据管理 -->
         <div class="space-y-3">
