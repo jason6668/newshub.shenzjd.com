@@ -67,7 +67,7 @@
 
             <!-- 主题切换 -->
             <button
-              @click="toggleTheme"
+              @click="emit('settings')"
               class="btn btn-ghost btn-sm sm:btn-md btn-circle cursor-pointer"
               :title="currentTheme === 'light' ? '切换到深色' : '切换到浅色'">
               <svg v-if="currentTheme === 'light'" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@
               <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 mt-2">
                 <li><a @click="$emit('search')"><span>搜索 (⌘K)</span></a></li>
                 <li><a @click="$emit('toggle-layout')"><span>切换布局</span></a></li>
-                <li><a @click="toggleTheme"><span>切换主题</span></a></li>
+                <li><a @click="emit('settings')"><span>主题设计</span></a></li>
                  <li><a @click="showShortcuts = true"><span>快捷键</span></a></li>
               </ul>
             </div>
