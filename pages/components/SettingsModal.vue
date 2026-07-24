@@ -121,11 +121,16 @@
           <div class="text-xs text-slate-500 space-y-1">
             <p>NewsHub v{{ version }}</p>
             <p>一个现代化的热点聚合平台</p>
-            <p class="mt-2">
-              <a href="https://github.com/wu529778790/newshub.shenzjd.com" target="_blank" class="text-blue-500 hover:underline">
-                GitHub 仓库 →
-              </a>
-            </p>
+       <p class="mt-2">
+  <a
+    href="https://blog.8818618.xyz"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-blue-500 hover:underline"
+  >
+    访问我的博客 →
+  </a>
+</p>
           </div>
         </div>
       </div>
