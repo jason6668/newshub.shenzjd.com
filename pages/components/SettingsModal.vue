@@ -312,12 +312,12 @@ const themes = [
   },
   {
     name: '电报蓝',
-    value: 'telegram',
+    value: 'aqua',
     icon: '✈️'
   },
   {
     name: '少女粉',
-    value: 'pink',
+    value: 'valentine',
     icon: '🌸'
   },
   {
@@ -341,7 +341,6 @@ const themes = [
     icon: '👑'
   }
 ]
-
 // 设置数据
 const settings = ref({
   layout: 'grid',
