@@ -70,7 +70,7 @@ export default defineNuxtConfig({
     // 公共配置（客户端可用）
     public: {
       siteUrl: process.env.SITE_URL || "http://localhost:3000",
-      siteName: "NewsHub - 热点聚合器",
+      siteName: "马老师专用 - 全网热点资讯",
       version: process.env.npm_package_version || "0.0.1",
     },
   },
