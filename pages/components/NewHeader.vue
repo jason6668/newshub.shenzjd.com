@@ -104,8 +104,7 @@
                 <li><a @click="$emit('search')"><span>搜索 (⌘K)</span></a></li>
                 <li><a @click="$emit('toggle-layout')"><span>切换布局</span></a></li>
                 <li><a @click="toggleTheme"><span>切换主题</span></a></li>
-                <li><a href="/api" target="_blank"><span>API 文档</span></a></li>
-                <li><a @click="showShortcuts = true"><span>快捷键</span></a></li>
+                 <li><a @click="showShortcuts = true"><span>快捷键</span></a></li>
               </ul>
             </div>
           </div>
